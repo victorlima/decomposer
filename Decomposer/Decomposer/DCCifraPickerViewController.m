@@ -20,7 +20,7 @@
 
 +( DCCifraPickerViewController* ) cifraPickerViewController
 {
-  return [[DCCifraPickerViewController alloc] initWithNibName:@"DCCifraPickerViewController.xib" bundle:nil];
+  return [[DCCifraPickerViewController alloc] initWithNibName:@"DCCifraPickerViewController" bundle:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,7 +44,7 @@
 #pragma mark - UIPickerViewDataSource & UIPickerViewDelegate
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-  
+  return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component

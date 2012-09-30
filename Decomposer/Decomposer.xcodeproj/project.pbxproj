@@ -26,6 +26,7 @@
 		D964CF041618016F002FE75D /* DCCifraPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D964CF021618016F002FE75D /* DCCifraPickerViewController.m */; };
 		D964CF051618016F002FE75D /* DCCifraPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */; };
 		D9F75859161805E80023481C /* DCCifraPickerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F75858161805E80023481C /* DCCifraPickerViewControllerTests.m */; };
+		D9F7585A1618082E0023481C /* DCCifraPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9F7585A1618082E0023481C /* DCCifraPickerViewController.xib in Resources */,
 				D964CEDD1617FB4E002FE75D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
