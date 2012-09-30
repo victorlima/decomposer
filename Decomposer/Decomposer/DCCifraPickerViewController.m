@@ -8,6 +8,8 @@
 
 #import "DCCifraPickerViewController.h"
 
+NSString* const CifraGenerationNotificationKey = @"CifraGenerationNotification";
+
 @interface DCCifraPickerViewController () {
   IBOutlet UIPickerView* rootNotePickerView;
   IBOutlet UIPickerView* majorMinorPickerView;
@@ -51,6 +53,12 @@
 {
   if( pickerView == rootNotePickerView )
     return 12;
+  
+  if( pickerView == majorMinorPickerView )
+    return 6;
+  
+  if( pickerView == otherPickerView )
+    return 11;
   
   return 0;
 }
@@ -99,6 +107,69 @@
       default:
         break;
     }
+
+  if( pickerView == majorMinorPickerView )
+    switch (row) {
+      case 0:
+        title = @"m";
+        break;
+      case 1:
+        title = @"maj";
+        break;
+      case 2:
+        title = @"M";
+        break;
+      case 3:
+        title = @"aug";
+        break;
+      case 4:
+        title = @"dim";
+        break;
+      case 5:
+        title = @"sus";
+        break;
+      default:
+        break;
+    }
+  
+  if( pickerView == otherPickerView )
+    switch (row) {
+      case 0:
+        title = @"2";
+        break;
+      case 1:
+        title = @"3";
+        break;
+      case 2:
+        title = @"4";
+        break;
+      case 3:
+        title = @"5";
+        break;
+      case 4:
+        title = @"6";
+        break;
+      case 5:
+        title = @"7";
+        break;
+      case 6:
+        title = @"b5";
+        break;
+      case 7:
+        title = @"9";
+        break;
+      case 8:
+        title = @"b9";
+        break;
+      case 9:
+        title = @"13";
+        break;
+      case 10:
+        title = @"b13";
+        break;
+      default:
+        break;
+    }
   
   return title;
 }
@@ -106,6 +177,46 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
   
+}
+
+#pragma mark - Actions
+-( IBAction ) done:(id)sender
+{
+  [self dismissViewControllerAnimated: YES completion:
+   ^{
+     [self notifyCifraGeneration];
+  }];
+}
+
+-( void ) notifyCifraGeneration
+{
+  NSUInteger selectedRow;
+  
+  selectedRow = [rootNotePickerView selectedRowInComponent:0];
+  NSString* rootTitle;
+  if( selectedRow != -1 )
+    rootTitle = [self pickerView: rootNotePickerView titleForRow: selectedRow forComponent: 0];
+  else
+    rootTitle = @"";
+
+  selectedRow = [majorMinorPickerView selectedRowInComponent:0];
+  NSString* majorMinorTitle;
+  if( selectedRow != -1 )
+    majorMinorTitle = [self pickerView: majorMinorPickerView titleForRow: selectedRow forComponent: 0];
+  else
+    majorMinorTitle = @"";
+
+  selectedRow = [otherPickerView selectedRowInComponent:0];
+  NSString* otherTitle;
+  if( selectedRow != -1 )
+    otherTitle = [self pickerView: otherPickerView titleForRow: selectedRow forComponent: 0];
+  else
+    otherTitle = @"";
+
+  NSString* cifra = [NSString stringWithFormat:@"%@%@%@", rootTitle, majorMinorTitle, otherTitle];
+  
+  [[NSNotificationCenter defaultCenter] postNotificationName: CifraGenerationNotificationKey
+                                                      object: cifra];
 }
 
 @end

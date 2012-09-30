@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSString* const CifraGenerationNotificationKey;
+
 @interface DCCifraPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 +( DCCifraPickerViewController* ) cifraPickerViewController;
