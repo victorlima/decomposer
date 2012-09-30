@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DCCifraPickerViewController : UIViewController
+@interface DCCifraPickerViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 +( DCCifraPickerViewController* ) cifraPickerViewController;
 

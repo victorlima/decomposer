@@ -22,10 +22,10 @@
 		D964CED41617FB4E002FE75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D964CEAE1617FB4D002FE75D /* UIKit.framework */; };
 		D964CED51617FB4E002FE75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D964CEB01617FB4D002FE75D /* Foundation.framework */; };
 		D964CEDD1617FB4E002FE75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D964CEDB1617FB4E002FE75D /* InfoPlist.strings */; };
-		D964CEE01617FB4E002FE75D /* DecomposerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D964CEDF1617FB4E002FE75D /* DecomposerTests.m */; };
 		D964CF001617FFE2002FE75D /* libmusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D964CEF31617FF36002FE75D /* libmusic.framework */; };
 		D964CF041618016F002FE75D /* DCCifraPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D964CF021618016F002FE75D /* DCCifraPickerViewController.m */; };
 		D964CF051618016F002FE75D /* DCCifraPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */; };
+		D9F75859161805E80023481C /* DCCifraPickerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F75858161805E80023481C /* DCCifraPickerViewControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +59,13 @@
 		D964CED21617FB4D002FE75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D964CEDA1617FB4E002FE75D /* DecomposerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DecomposerTests-Info.plist"; sourceTree = "<group>"; };
 		D964CEDC1617FB4E002FE75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D964CEDE1617FB4E002FE75D /* DecomposerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecomposerTests.h; sourceTree = "<group>"; };
-		D964CEDF1617FB4E002FE75D /* DecomposerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecomposerTests.m; sourceTree = "<group>"; };
 		D964CEF31617FF36002FE75D /* libmusic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libmusic.framework; sourceTree = "<group>"; };
 		D964CEF51617FF36002FE75D /* PianoChordView.nib */ = {isa = PBXFileReference; lastKnownFileType = file; path = PianoChordView.nib; sourceTree = "<group>"; };
 		D964CF011618016F002FE75D /* DCCifraPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCifraPickerViewController.h; sourceTree = "<group>"; };
 		D964CF021618016F002FE75D /* DCCifraPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCifraPickerViewController.m; sourceTree = "<group>"; };
 		D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCCifraPickerViewController.xib; sourceTree = "<group>"; };
+		D9F75857161805E80023481C /* DCCifraPickerViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCifraPickerViewControllerTests.h; sourceTree = "<group>"; };
+		D9F75858161805E80023481C /* DCCifraPickerViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCifraPickerViewControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,15 +127,13 @@
 		D964CEB41617FB4D002FE75D /* Decomposer */ = {
 			isa = PBXGroup;
 			children = (
+				D9F75856161805BD0023481C /* controllers */,
+				D9F75854161805AE0023481C /* xibs */,
 				D964CEBD1617FB4D002FE75D /* DCAppDelegate.h */,
 				D964CEBE1617FB4D002FE75D /* DCAppDelegate.m */,
 				D964CEC61617FB4D002FE75D /* DCViewController.h */,
 				D964CEC71617FB4D002FE75D /* DCViewController.m */,
-				D964CEC91617FB4D002FE75D /* DCViewController.xib */,
 				D964CEB51617FB4D002FE75D /* Supporting Files */,
-				D964CF011618016F002FE75D /* DCCifraPickerViewController.h */,
-				D964CF021618016F002FE75D /* DCCifraPickerViewController.m */,
-				D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */,
 			);
 			path = Decomposer;
 			sourceTree = "<group>";
@@ -157,9 +155,9 @@
 		D964CED81617FB4E002FE75D /* DecomposerTests */ = {
 			isa = PBXGroup;
 			children = (
-				D964CEDE1617FB4E002FE75D /* DecomposerTests.h */,
-				D964CEDF1617FB4E002FE75D /* DecomposerTests.m */,
 				D964CED91617FB4E002FE75D /* Supporting Files */,
+				D9F75857161805E80023481C /* DCCifraPickerViewControllerTests.h */,
+				D9F75858161805E80023481C /* DCCifraPickerViewControllerTests.m */,
 			);
 			path = DecomposerTests;
 			sourceTree = "<group>";
@@ -189,6 +187,24 @@
 				D964CEF51617FF36002FE75D /* PianoChordView.nib */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9F75854161805AE0023481C /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				D964CEC91617FB4D002FE75D /* DCViewController.xib */,
+				D964CF031618016F002FE75D /* DCCifraPickerViewController.xib */,
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
+		D9F75856161805BD0023481C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D964CF011618016F002FE75D /* DCCifraPickerViewController.h */,
+				D964CF021618016F002FE75D /* DCCifraPickerViewController.m */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D964CEE01617FB4E002FE75D /* DecomposerTests.m in Sources */,
+				D9F75859161805E80023481C /* DCCifraPickerViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +506,7 @@
 				D964CEE51617FB4E002FE75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D964CEE61617FB4E002FE75D /* Build configuration list for PBXNativeTarget "DecomposerTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +515,7 @@
 				D964CEE81617FB4E002FE75D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
