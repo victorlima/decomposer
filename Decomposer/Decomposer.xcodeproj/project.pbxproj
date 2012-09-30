@@ -23,6 +23,7 @@
 		D964CED51617FB4E002FE75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D964CEB01617FB4D002FE75D /* Foundation.framework */; };
 		D964CEDD1617FB4E002FE75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D964CEDB1617FB4E002FE75D /* InfoPlist.strings */; };
 		D964CEE01617FB4E002FE75D /* DecomposerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D964CEDF1617FB4E002FE75D /* DecomposerTests.m */; };
+		D964CF001617FFE2002FE75D /* libmusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D964CEF31617FF36002FE75D /* libmusic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		D964CEDC1617FB4E002FE75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D964CEDE1617FB4E002FE75D /* DecomposerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DecomposerTests.h; sourceTree = "<group>"; };
 		D964CEDF1617FB4E002FE75D /* DecomposerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecomposerTests.m; sourceTree = "<group>"; };
+		D964CEF31617FF36002FE75D /* libmusic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libmusic.framework; sourceTree = "<group>"; };
+		D964CEF51617FF36002FE75D /* PianoChordView.nib */ = {isa = PBXFileReference; lastKnownFileType = file; path = PianoChordView.nib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D964CF001617FFE2002FE75D /* libmusic.framework in Frameworks */,
 				D964CEAF1617FB4D002FE75D /* UIKit.framework in Frameworks */,
 				D964CEB11617FB4D002FE75D /* Foundation.framework in Frameworks */,
 				D964CEB31617FB4D002FE75D /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +110,7 @@
 		D964CEAD1617FB4D002FE75D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D964CEF21617FF36002FE75D /* libmusic.embeddedframework */,
 				D964CEAE1617FB4D002FE75D /* UIKit.framework */,
 				D964CEB01617FB4D002FE75D /* Foundation.framework */,
 				D964CEB21617FB4D002FE75D /* CoreGraphics.framework */,
@@ -158,6 +163,24 @@
 				D964CEDB1617FB4E002FE75D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D964CEF21617FF36002FE75D /* libmusic.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				D964CEF31617FF36002FE75D /* libmusic.framework */,
+				D964CEF41617FF36002FE75D /* Resources */,
+			);
+			name = libmusic.embeddedframework;
+			path = ../libs/libmusic.embeddedframework;
+			sourceTree = "<group>";
+		};
+		D964CEF41617FF36002FE75D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D964CEF51617FF36002FE75D /* PianoChordView.nib */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +400,10 @@
 		D964CEE41617FB4E002FE75D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libs/libmusic.embeddedframework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Decomposer/Decomposer-Prefix.pch";
 				INFOPLIST_FILE = "Decomposer/Decomposer-Info.plist";
@@ -388,6 +415,10 @@
 		D964CEE51617FB4E002FE75D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libs/libmusic.embeddedframework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Decomposer/Decomposer-Prefix.pch";
 				INFOPLIST_FILE = "Decomposer/Decomposer-Info.plist";
